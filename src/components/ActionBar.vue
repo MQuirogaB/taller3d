@@ -22,32 +22,6 @@
         <span v-if="isStale && !isGenerating" class="dot-badge dot-badge--pulse" aria-hidden="true"></span>
       </button>
 
-      <span class="action-divider" aria-hidden="true"></span>
-
-      <div class="action-field">
-        <label class="action-field__label" :for="formatId">{{ $t('stlFormat') }}</label>
-        <div class="select action-select">
-          <select :id="formatId" :value="stlType" @change="$emit('update:stlType', $event.target.value)">
-            <option value="binary">{{ $t('stlBinary') }}</option>
-            <option value="ASCII">{{ $t('stlAscii') }}</option>
-          </select>
-          <UiIcon name="chevron-down" class="select__chevron" />
-        </div>
-        <UiHelp class="action-field__help" :text="$t('exportTypeHelp')" />
-      </div>
-
-      <span class="action-divider" aria-hidden="true"></span>
-
-      <div class="action-field">
-        <UiToggle
-          :value="multipleParts"
-          :label="$t('separateParts')"
-          class="action-toggle"
-          @input="$emit('update:multipleParts', $event)"
-        />
-        <UiHelp :text="$t('exportSeparatePartsHelp')" />
-      </div>
-
       <span class="action-spacer" aria-hidden="true"></span>
 
       <div class="action-bar__exports">
@@ -83,14 +57,12 @@
 
 <script>
 import UiIcon from './ui/UiIcon.vue';
-import UiToggle from './ui/UiToggle.vue';
-import UiHelp from './ui/UiHelp.vue';
 
 const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 
 export default {
   name: 'ActionBar',
-  components: { UiIcon, UiToggle, UiHelp },
+  components: { UiIcon },
   props: {
     isGenerating: {
       type: Boolean,
