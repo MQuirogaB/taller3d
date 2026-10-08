@@ -68,24 +68,10 @@
 
     <div class="info-area">
 
-      <section id="changelog" class="info-section">
-        <header class="info-section__header">
-          <span class="info-section__icon"><UiIcon name="scroll-text" /></span>
-          <div>
-            <h2 class="info-section__title">Changelog</h2>
-            <p class="info-section__subtitle">v{{ appVersion }}</p>
-          </div>
-        </header>
-        <div class="changelog-body" :class="{ 'is-collapsed': !changelogExpanded }">
-          <MarkdownRenderer :source="visibleChangelog" class="prose" />
-        </div>
-        <div class="changelog-toggle">
-          <button type="button" class="btn" @click="changelogExpanded = !changelogExpanded">
-            <UiIcon :name="changelogExpanded ? 'chevron-up' : 'chevron-down'" />
-            <span>{{ changelogExpanded ? $t('showLess') : $t('showFullChangelog') }}</span>
-          </button>
-        </div>
-      </section>
+      <p class="credits">
+        Adaptado de:
+        <a href="https://qrcode2stl.printer.tools/" target="_blank" rel="noopener">https://qrcode2stl.printer.tools/</a>
+      </p>
     </div>
 
     <transition name="modal" :duration="{ enter: 300, leave: 180 }">
@@ -748,5 +734,15 @@ export default {
   .info-section {
     padding: 20px;
   }
+}
+.credits {
+  margin: 28px 0 8px;
+  color: var(--text-3);
+  font-size: 13px;
+  text-align: center;
+}
+
+.credits a {
+  color: var(--accent-text);
 }
 </style>

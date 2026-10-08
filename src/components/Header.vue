@@ -41,60 +41,6 @@
           <span class="header-btn__label">{{ $t('batchMode') }}</span>
         </button>
 
-        <UiPopover placement="bottom-end" :width="300" panel-class="help-menu">
-          <template #trigger="{ toggle, open }">
-            <button
-              type="button"
-              class="btn btn--ghost header-btn"
-              :class="{ 'is-open': open }"
-              aria-haspopup="menu"
-              :aria-expanded="open ? 'true' : 'false'"
-              @click="toggle"
-            >
-              <UiIcon name="help" />
-              <span class="header-btn__label">{{ $t('help') }}</span>
-              <span v-if="newVersion" class="dot-badge" aria-hidden="true"></span>
-            </button>
-          </template>
-          <div class="menu-heading">{{ $t('help') }}</div>
-          <button type="button" class="menu-item" @click="scrollTo('printguide')">
-            <UiIcon name="book-open" />
-            <span class="menu-item__label">{{ $t('printGuideTitle') }}</span>
-          </button>
-          <button type="button" class="menu-item" @click="scrollTo('faq')">
-            <UiIcon name="help" />
-            <span class="menu-item__label">{{ $t('faqTitle') }}</span>
-          </button>
-          <button type="button" class="menu-item" @click="openChangelogModal">
-            <UiIcon name="scroll-text" />
-            <span class="menu-item__label">Changelog</span>
-            <span v-if="newVersion" class="badge">{{ $t('new') }}</span>
-            <span class="menu-item__meta">v{{ appVersion }}</span>
-          </button>
-
-          <div class="menu-divider"></div>
-          <div class="menu-heading">{{ $t('shortcuts') }}</div>
-          <div class="shortcut-row">
-            <span>{{ $t('generateButton') }}</span>
-            <span class="shortcut-keys"><span class="kbd">{{ modifier }}</span><span class="kbd">↵</span></span>
-          </div>
-          <div class="shortcut-row">
-            <span>{{ $t('saveAsButton') }}</span>
-            <span class="shortcut-keys"><span class="kbd">{{ modifier }}</span><span class="kbd">S</span></span>
-          </div>
-          <div class="shortcut-row">
-            <span>{{ $t('scrubHint') }}</span>
-            <span class="shortcut-keys"><span class="kbd">⇧</span><span class="kbd">↑↓</span></span>
-          </div>
-
-          <div class="menu-divider"></div>
-          <a class="menu-item" href="https://github.com/MQuirogaB/taller3d" target="_blank" rel="noopener">
-            <i class="fab fa-github menu-item__fa" aria-hidden="true"></i>
-            <span class="menu-item__label">{{ $t('viewOnGithub') }}</span>
-            <UiIcon name="arrow-up-right" />
-          </a>
-        </UiPopover>
-
         <LanguageSelector />
 
         <button
@@ -120,7 +66,6 @@
 import LanguageSelector from './LanguageSelector.vue';
 import UiIcon from './ui/UiIcon.vue';
 import UiSegmented from './ui/UiSegmented.vue';
-import UiPopover from './ui/UiPopover.vue';
 import packageJson from '../../package.json';
 import { bus } from '../main';
 import { themeState, toggleTheme } from '../theme';
@@ -133,7 +78,6 @@ export default {
     LanguageSelector,
     UiIcon,
     UiSegmented,
-    UiPopover,
   },
   props: {
     mode: {
