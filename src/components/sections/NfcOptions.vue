@@ -7,7 +7,7 @@
     @update:enabled="options.base.hasNfcIndentation = $event"
   >
     <p class="field-hint">{{ $t('nfcIndentationHelp') }}</p>
-    <UiField :label="$t('indentation') + ' ' + $t('shape')" :title="'base.nfcIndentationShape — ' + $t('indentation') + ' ' + $t('shape')">
+    <UiField stack :label="$t('indentation') + ' ' + $t('shape')" :title="'base.nfcIndentationShape — ' + $t('indentation') + ' ' + $t('shape')">
       <div class="choice-group" role="radiogroup" :aria-label="$t('indentation') + ' ' + $t('shape')">
         <button
           type="button"

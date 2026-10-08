@@ -576,10 +576,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     min-width: 0;
     height: var(--control-height);
-    padding: 0 10px;
+    padding: 0 6px;
+    overflow: hidden;
     border: 1px solid var(--input-border);
     border-radius: var(--radius-sm);
     background: var(--input-bg);
@@ -630,12 +631,14 @@
   }
 
   .choice__glyph--rounded {
+    width: 18px;
+    height: 12px;
     border-radius: 999px;
   }
 
   .choice__glyph--rect {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 2px;
   }
 

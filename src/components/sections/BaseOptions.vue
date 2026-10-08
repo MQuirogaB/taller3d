@@ -1,6 +1,6 @@
 <template>
   <UiSection :title="$t('base')" default-open>
-    <UiField :label="$t('shape')" :title="'base.shape — ' + $t('shape')">
+    <UiField stack :label="$t('shape')" :title="'base.shape — ' + $t('shape')">
       <div class="choice-group" role="radiogroup" :aria-label="$t('shape')">
         <button
           type="button"
