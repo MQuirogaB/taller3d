@@ -1,6 +1,51 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2026-10-06
+
+### Added
+- Completely redesigned interface: a full-screen workbench with the settings on the left, a large 3D preview on the right and all export actions in one bar below the preview. Everything you need is visible without scrolling.
+- Dark and light theme. The app follows your system setting, and you can switch with the button in the top right.
+- Live preview: after the first "Generate 3D Model", the model updates automatically while you change settings. Turn it off with "Live" in the preview toolbar if you prefer to update manually; the app then shows when the preview is out of date.
+- New preview controls: 3D and flat 2D top view, rotate/pan/zoom tools, reset view and a view cube to look at the model from any side.
+- Dimension ruler and overall model size shown directly in the preview.
+- Keyboard shortcuts: Ctrl/⌘ + Enter generates the model, Ctrl/⌘ + S exports the STL.
+- Drag a setting's label left or right to change its value; Shift + arrow keys change values in bigger steps.
+- Previously uploaded custom icons now stay selectable in the icon picker.
+- New title setting "Spacing to code": the gap between the code and the title can now be set separately from the gap to the edge ("Edge margin").
+- Text mode has an "Edge margin" setting.
+- The preview shows a short note whenever a setting had to be adjusted to keep the model printable (for example a corner radius that would cut into the code), with the details next to the setting.
+- A warning when the light margin around a QR code is too narrow to scan reliably.
+
+### Changed
+- Switching between QR Code, Spotify Code and Text keeps your settings and generated model for each mode.
+- "Render to PNG" no longer reloads the page and renders a clean, high-resolution top view with transparent background.
+- The 3D preview only renders when something changes, which saves battery and CPU.
+- Settings are grouped into "Content", "Model" and "Extras" tabs with collapsible sections.
+- Titles are laid out from the actual letter shapes, so the space above and below a title now matches your settings exactly. Long titles wrap between words instead of in the middle of a word.
+- "Protrusion Offset" for keychains is now "Hole distance": the distance between the edge of the tag and the hole. Larger values move the hole further out.
+- Clearer names for heights and depths ("Thickness", "Relief height", "Border height", "Pocket depth").
+- An icon still forces error correction level H, but your own choice is kept and applies again when you remove the icon.
+- Values outside the allowed range snap back to the nearest valid value when you leave the field.
+- The underside of the model is lit in the preview, so NFC and magnet pockets are easy to see.
+
+### Fixed
+- The printability warning for very small QR code details is shown again.
+- Entering an invalid Spotify link no longer causes an error.
+- A failed model generation no longer leaves the app stuck in the "generating" state.
+- Shadows in the preview are no longer cut off on one side of the model.
+- Multi-line titles at the top of the code are no longer shown in reverse order.
+- Left, right and centered titles are now exactly aligned with the code.
+- An enabled title without text no longer adds an empty strip to the base.
+- Text in Text mode no longer extends beyond the plate; the plate grows to fit instead.
+- Large keychain offsets no longer detach the keychain loop from the tag.
+- Large corner radii no longer cut into the code or break the border.
+- NFC and magnet pockets can no longer cut through the base.
+- QR codes with a block size other than 100% are centered again.
+- Spotify codes are exactly centered on the plate.
+- A width, thickness or margin of 0 or less no longer produces a broken model.
+- The Export button is no longer cut off on laptop screens, and the header buttons fit on tablets.
+
 ## [1.23.0] - 2026-05-25
 
 ### Added

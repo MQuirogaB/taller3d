@@ -40,7 +40,7 @@ export default {
   // QR Code Options Panel
   //
   qrCodeOptionsTitle: 'Nastavení QR kódu',
-  qrCodeTextPlaceholder: 'Váš text, který by měl QR kód obsahovat. Například Hello World nebo https://flxn.de.',
+  qrCodeTextPlaceholder: 'Váš text, který by měl QR kód obsahovat. Například Hello World nebo https://example.com.',
   errorCorrection: 'Míra opravy chyb',
   errorCorrectionHelp: 'Čím větší je míra opravy chyb, tím věští QR kód bude.',
   optionalFieldsHint: 'Ne všechny pole musí být vyplněny.',

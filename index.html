@@ -12,6 +12,22 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9a6bb4">
     <meta name="msapplication-TileColor" content="#9a6bb4">
     <meta name="theme-color" content="#fdfcfa">
+    <meta name="color-scheme" content="light dark">
+    <script>
+      // Apply the saved or system color theme before first paint to avoid a flash.
+      (function () {
+        var theme = 'light';
+        try {
+          var stored = window.localStorage.getItem('theme');
+          if (stored === 'light' || stored === 'dark') {
+            theme = stored;
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark';
+          }
+        } catch (e) {}
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <title>Taller3D - Diseña QR, Spotify y placas de texto en 3D</title>
     <meta name="description" content="Taller3D: crea códigos QR, códigos de Spotify y placas de texto personalizados y expórtalos como STL listos para imprimir en 3D. Herramienta online gratuita.">
     <meta name="keywords" content="taller 3D, QR 3D, código QR STL, generador de placas 3D, código Spotify 3D, impresión 3D, diseñador online 3D, STL personalizado">
@@ -72,10 +88,6 @@
       <strong>Taller3D no funciona correctamente sin JavaScript. Por favor, actívalo para continuar.</strong>
     </noscript>
     <div id="app"></div>
-    <!-- Huecos de anuncios del proyecto original, vacíos en esta copia -->
-    <div id="adsenseloader-header" style="display: none;"></div>
-    <div id="adsenseloader-export" style="display: none;"></div>
-    <div id="adsenseloader-model" style="display: none;"></div>
 
     <script type="module" src="/src/main.js"></script>
   </body>

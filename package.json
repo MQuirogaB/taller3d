@@ -1,6 +1,6 @@
 {
   "name": "qrcode2stl",
-  "version": "1.23.0",
+  "version": "2.0.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -35,7 +35,6 @@
     "@vitejs/plugin-vue2": "^2.3.1",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.20.1",
-    "sass": "^1.105.0",
     "vite": "^5.1.4",
     "vite-plugin-node-polyfills": "^0.23.0"
   },

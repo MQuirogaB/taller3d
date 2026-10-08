@@ -40,7 +40,7 @@ export default {
   // QR Code Options Panel
   //
   qrCodeOptionsTitle: 'Opções do QR Code',
-  qrCodeTextPlaceholder: 'Texto para seu QR code ex: Olá Mundo ou https://flxn.de',
+  qrCodeTextPlaceholder: 'Texto para seu QR code ex: Olá Mundo ou https://example.com',
   errorCorrection: 'Correção de Erro',
   errorCorrectionHelp: 'Quanto maior o nível de correção de erro, mais denso será o QR code',
   optionalFieldsHint: 'Nem todos os campos precisam ser preenchidos',
